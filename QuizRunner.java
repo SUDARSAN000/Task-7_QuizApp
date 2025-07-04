@@ -9,7 +9,6 @@ public class QuizRunner implements Runnable{
 	private final List<Questions> questions;
 	private final Scanner scanner = new Scanner(System.in);
 	private int score = 0;
-	private int attempted = 0;
 	
 	public QuizRunner(List<Questions> questions) {
 		this.questions = questions;
@@ -33,7 +32,6 @@ public class QuizRunner implements Runnable{
 				System.out.println(" "+ (i+1)+". "+options[i]);
 			}
 			int ans = getAnswer();
-			attempted++;
 			if(ans == q.getCorrectAnswer()) {
 				score++;
 			}
@@ -58,8 +56,5 @@ public class QuizRunner implements Runnable{
 	}
 	public int getScore() {
 		return score;
-	}
-	public int getAttempted() {
-		return attempted;
 	}
 }
